@@ -17,15 +17,15 @@ Error: ../../third_party/electron_node/src/debug_utils.cc(491,11): error: 'delet
 Upstreamed in https://github.com/nodejs/node/pull/58844.
 
 diff --git a/src/debug_utils.cc b/src/debug_utils.cc
-index 97884b9a0f8d6d88e36da06b05642505c767338d..65283ef31da35d0f08fcff7a5e79bf960d861126 100644
+index 65283ef31da35d0f08fcff7a5e79bf960d861126..97884b9a0f8d6d88e36da06b05642505c767338d 100644
 --- a/src/debug_utils.cc
 +++ b/src/debug_utils.cc
 @@ -488,7 +488,7 @@ std::vector<std::string> NativeSymbolDebuggingContext::GetLoadedLibraries() {
            WideCharToMultiByte(
                CP_UTF8, 0, module_name, -1, str, size, nullptr, nullptr);
            list.emplace_back(str);
--          delete str;
-+          delete[] str;
+-          delete[] str;
++          delete str;
          }
        }
      }
